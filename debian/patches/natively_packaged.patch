@@ -1,0 +1,15 @@
+Description: Enable natively packaged mode.
+Author: Felix Geyer <fgeyer@debian.org>
+Forwarded: not-needed
+
+--- ruby-mizuho-0.9.19.orig/lib/mizuho.rb
++++ ruby-mizuho-0.9.19/lib/mizuho.rb
+@@ -20,7 +20,7 @@
+ 
+ module Mizuho
+ 	VERSION_STRING    = "0.9.19"
+-	NATIVELY_PACKAGED = false
++	NATIVELY_PACKAGED = true
+ 
+ 	if NATIVELY_PACKAGED
+ 		TEMPLATES_DIR    = "/usr/share/mizuho/templates"

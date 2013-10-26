@@ -1,0 +1,5 @@
+ruby-mizuho (0.9.19+dfsg-1) unstable; urgency=low
+
+  * Initial release. (Closes: #727757)
+
+ -- Felix Geyer <fgeyer@debian.org>  Sat, 26 Oct 2013 16:05:42 +0200

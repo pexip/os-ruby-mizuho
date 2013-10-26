@@ -1,0 +1,3 @@
+Minified javascript code without source and embedded code
+copies have been stripped from the ruby-mizuho tarball,
+see the dfsg-free target in debian/rules.
