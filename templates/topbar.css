@@ -1,0 +1,125 @@
+#topbar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	height: 2.5em;
+	padding-left: 10%;
+	padding-right: 10%;
+	z-index: 1;
+	background: #880000;
+	overflow: hidden;
+	white-space: nowrap;
+	box-shadow: 0px 3px 6px #555555;
+	-moz-box-shadow: 0px 3px 6px #555555;
+	-webkit-box-shadow: 0px 3px 6px #555555;
+	-o-box-shadow: 0px 3px 6px #555555;
+}
+
+#topbar .title {
+	display: inline-block;
+	margin: 0.6em 1em 0 0;
+	vertical-align: top;
+}
+
+#topbar .title img {
+	display: none;
+	margin-right: 6px;
+	vertical-align: middle;
+}
+
+#topbar .title a {
+	color: #fffafa;
+	border: 0;
+}
+
+#topbar .title:hover img,
+.mobile #topbar .title img {
+	display: inline-block;
+	margin-left: -17px;
+}
+
+#topbar .title:hover a,
+.mobile #topbar .title a {
+	color: #ffffdd;
+}
+
+#floattoc {
+	position: fixed;
+	z-index: 1;
+	top: 2em;
+	bottom: 20%;
+	width: 50%;
+	background: #f0f0f0;
+	color: black;
+	box-shadow: 0px 6px 6px #555555;
+	-moz-box-shadow: 0px 6px 6px #555555;
+	-webkit-box-shadow: 0px 6px 6px #555555;
+	-o-box-shadow: 0px 6px 6px #555555;
+	overflow: auto;
+	padding: 1em;
+	border-radius: 6px;
+	-webkit-border-radius: 8px;
+	-webkit-border-top-left-radius: 0;
+	-webkit-border-top-right-radius: 0;
+	-moz-border-radius: 8px;
+	-moz-border-radius-topleft: 0;
+	-moz-border-top-right-radius: 0;
+	-o-border-radius: 8px;
+	-o-border-radius-topleft: 0;
+	-o-border-top-right-radius: 0;
+	border-radius: 8px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+#floattoc a.current {
+	font-weight: bold;
+	color: black;
+}
+
+#current_section {
+	display: inline-block;
+	margin: 0.5em 0 0 0;
+	padding: 0.2em 0.5em 0.2em 0.5em;
+	background: #550000;
+	font-size: 90%;
+	vertical-align: top;
+	color: white;
+	border: none;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius: 8px;
+}
+
+#current_section:hover {
+	text-decoration: none;
+	border: none;
+}
+
+#current_section.pressed {
+	background: #f0f0f0;
+	color: black;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	-moz-border-bottom-left-radius: 0;
+	-moz-border-bottom-right-radius: 0;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+/* http://nicolasgallagher.com/jump-links-and-viewport-positioning/ */
+.anchor_helper {
+	position: relative;
+	display: block;
+	top: -50px;
+	width: 1px;
+	height: 1px;
+}

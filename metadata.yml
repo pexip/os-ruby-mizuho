@@ -1,0 +1,424 @@
+--- !ruby/object:Gem::Specification
+name: mizuho
+version: !ruby/object:Gem::Version
+  version: 0.9.19
+  prerelease: 
+platform: ruby
+authors:
+- Hongli Lai
+autorequire: 
+bindir: bin
+cert_chain: []
+date: 2013-05-01 00:00:00.000000000 Z
+dependencies:
+- !ruby/object:Gem::Dependency
+  name: nokogiri
+  requirement: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ! '>='
+      - !ruby/object:Gem::Version
+        version: 1.4.0
+  type: :runtime
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ! '>='
+      - !ruby/object:Gem::Version
+        version: 1.4.0
+- !ruby/object:Gem::Dependency
+  name: sqlite3
+  requirement: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ! '>='
+      - !ruby/object:Gem::Version
+        version: '0'
+  type: :runtime
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    none: false
+    requirements:
+    - - ! '>='
+      - !ruby/object:Gem::Version
+        version: '0'
+description: A documentation formatting tool. Mizuho converts Asciidoc input files
+  into nicely outputted HTML, possibly one file per chapter. Multiple templates are
+  supported, so you can write your own.
+email: software-signing@phusion.nl
+executables:
+- mizuho
+- mizuho-asciidoc
+extensions: []
+extra_rdoc_files: []
+files:
+- README.markdown
+- LICENSE.txt
+- Rakefile
+- bin/mizuho
+- bin/mizuho-asciidoc
+- lib/mizuho/fuzzystringmatch.rb
+- lib/mizuho/generator.rb
+- lib/mizuho/id_map.rb
+- lib/mizuho/packaging.rb
+- lib/mizuho/source_highlight.rb
+- lib/mizuho/utils.rb
+- lib/mizuho.rb
+- debian.template/changelog
+- debian.template/compat
+- debian.template/control.template
+- debian.template/copyright
+- debian.template/mizuho.install.template
+- debian.template/rules
+- debian.template/source/format
+- test/generator_spec.rb
+- test/id_map_spec.rb
+- test/parser_spec.rb
+- test/spec_helper.rb
+- templates/arrow-up.png
+- templates/balloon.png
+- templates/balloon.svg
+- templates/jquery-1.6.1.min.js
+- templates/jquery-1.7.1.min.js
+- templates/jquery.hashchange-1.0.0.js
+- templates/juvia.js
+- templates/mizuho.css
+- templates/mizuho.js
+- templates/toc.html
+- templates/topbar.css
+- templates/topbar.html
+- templates/topbar.js
+- asciidoc/a2x.py
+- asciidoc/asciidoc.conf
+- asciidoc/asciidoc.py
+- asciidoc/asciidocapi.py
+- asciidoc/BUGS
+- asciidoc/BUGS.txt
+- asciidoc/CHANGELOG
+- asciidoc/CHANGELOG.txt
+- asciidoc/common.aap
+- asciidoc/configure
+- asciidoc/configure.ac
+- asciidoc/COPYING
+- asciidoc/COPYRIGHT
+- asciidoc/dblatex/asciidoc-dblatex.sty
+- asciidoc/dblatex/asciidoc-dblatex.xsl
+- asciidoc/dblatex/dblatex-readme.txt
+- asciidoc/doc/a2x.1
+- asciidoc/doc/a2x.1.txt
+- asciidoc/doc/article-docinfo.xml
+- asciidoc/doc/article.pdf
+- asciidoc/doc/article.txt
+- asciidoc/doc/asciidoc.1
+- asciidoc/doc/asciidoc.1.txt
+- asciidoc/doc/asciidoc.conf
+- asciidoc/doc/asciidoc.dict
+- asciidoc/doc/asciidoc.txt
+- asciidoc/doc/asciidocapi.txt
+- asciidoc/doc/asciimathml.txt
+- asciidoc/doc/book-multi.txt
+- asciidoc/doc/book.epub
+- asciidoc/doc/book.txt
+- asciidoc/doc/customers.csv
+- asciidoc/doc/epub-notes.txt
+- asciidoc/doc/faq.txt
+- asciidoc/doc/latex-backend.txt
+- asciidoc/doc/latex-bugs.txt
+- asciidoc/doc/latex-filter.pdf
+- asciidoc/doc/latex-filter.txt
+- asciidoc/doc/latexmath.txt
+- asciidoc/doc/latexmathml.txt
+- asciidoc/doc/main.aap
+- asciidoc/doc/music-filter.pdf
+- asciidoc/doc/music-filter.txt
+- asciidoc/doc/publishing-ebooks-with-asciidoc.txt
+- asciidoc/doc/slidy-example.txt
+- asciidoc/doc/slidy.txt
+- asciidoc/doc/source-highlight-filter.pdf
+- asciidoc/doc/source-highlight-filter.txt
+- asciidoc/doc/testasciidoc.txt
+- asciidoc/docbook-xsl/asciidoc-docbook-xsl.txt
+- asciidoc/docbook-xsl/chunked.xsl
+- asciidoc/docbook-xsl/common.xsl
+- asciidoc/docbook-xsl/epub.xsl
+- asciidoc/docbook-xsl/fo.xsl
+- asciidoc/docbook-xsl/htmlhelp.xsl
+- asciidoc/docbook-xsl/manpage.xsl
+- asciidoc/docbook-xsl/text.xsl
+- asciidoc/docbook-xsl/xhtml.xsl
+- asciidoc/docbook45.conf
+- asciidoc/examples/website/a2x.1.txt
+- asciidoc/examples/website/asciidoc-docbook-xsl.txt
+- asciidoc/examples/website/asciidoc-graphviz-sample.txt
+- asciidoc/examples/website/asciidoc.css
+- asciidoc/examples/website/asciidoc.js
+- asciidoc/examples/website/asciidocapi.txt
+- asciidoc/examples/website/ASCIIMathML.js
+- asciidoc/examples/website/asciimathml.txt
+- asciidoc/examples/website/build-website.sh
+- asciidoc/examples/website/CHANGELOG.txt
+- asciidoc/examples/website/customers.csv
+- asciidoc/examples/website/epub-notes.txt
+- asciidoc/examples/website/faq.txt
+- asciidoc/examples/website/index.txt
+- asciidoc/examples/website/INSTALL.txt
+- asciidoc/examples/website/latex-backend.txt
+- asciidoc/examples/website/latex-bugs.txt
+- asciidoc/examples/website/latex-filter.txt
+- asciidoc/examples/website/LaTeXMathML.js
+- asciidoc/examples/website/latexmathml.txt
+- asciidoc/examples/website/layout1.conf
+- asciidoc/examples/website/layout1.css
+- asciidoc/examples/website/layout2.conf
+- asciidoc/examples/website/layout2.css
+- asciidoc/examples/website/main.aap
+- asciidoc/examples/website/manpage.txt
+- asciidoc/examples/website/music-filter.txt
+- asciidoc/examples/website/newlists.txt
+- asciidoc/examples/website/newtables.txt
+- asciidoc/examples/website/plugins.txt
+- asciidoc/examples/website/publishing-ebooks-with-asciidoc.txt
+- asciidoc/examples/website/README-website.txt
+- asciidoc/examples/website/README.txt
+- asciidoc/examples/website/slidy-example.txt
+- asciidoc/examples/website/slidy.txt
+- asciidoc/examples/website/source-highlight-filter.txt
+- asciidoc/examples/website/support.txt
+- asciidoc/examples/website/testasciidoc.txt
+- asciidoc/examples/website/userguide.txt
+- asciidoc/examples/website/version83.txt
+- asciidoc/examples/website/xhtml11-quirks.css
+- asciidoc/filters/code/code-filter-readme.txt
+- asciidoc/filters/code/code-filter-test.txt
+- asciidoc/filters/code/code-filter.conf
+- asciidoc/filters/code/code-filter.py
+- asciidoc/filters/graphviz/asciidoc-graphviz-sample.txt
+- asciidoc/filters/graphviz/graphviz-filter.conf
+- asciidoc/filters/graphviz/graphviz2png.py
+- asciidoc/filters/latex/latex-filter.conf
+- asciidoc/filters/latex/latex2png.py
+- asciidoc/filters/music/music-filter-test.txt
+- asciidoc/filters/music/music-filter.conf
+- asciidoc/filters/music/music2png.py
+- asciidoc/filters/source/source-highlight-filter-test.txt
+- asciidoc/filters/source/source-highlight-filter.conf
+- asciidoc/help.conf
+- asciidoc/html4.conf
+- asciidoc/html5.conf
+- asciidoc/images/highlighter.png
+- asciidoc/images/icons/callouts/1.png
+- asciidoc/images/icons/callouts/10.png
+- asciidoc/images/icons/callouts/11.png
+- asciidoc/images/icons/callouts/12.png
+- asciidoc/images/icons/callouts/13.png
+- asciidoc/images/icons/callouts/14.png
+- asciidoc/images/icons/callouts/15.png
+- asciidoc/images/icons/callouts/2.png
+- asciidoc/images/icons/callouts/3.png
+- asciidoc/images/icons/callouts/4.png
+- asciidoc/images/icons/callouts/5.png
+- asciidoc/images/icons/callouts/6.png
+- asciidoc/images/icons/callouts/7.png
+- asciidoc/images/icons/callouts/8.png
+- asciidoc/images/icons/callouts/9.png
+- asciidoc/images/icons/caution.png
+- asciidoc/images/icons/example.png
+- asciidoc/images/icons/home.png
+- asciidoc/images/icons/important.png
+- asciidoc/images/icons/next.png
+- asciidoc/images/icons/note.png
+- asciidoc/images/icons/prev.png
+- asciidoc/images/icons/README
+- asciidoc/images/icons/tip.png
+- asciidoc/images/icons/up.png
+- asciidoc/images/icons/warning.png
+- asciidoc/images/smallnew.png
+- asciidoc/images/tiger.png
+- asciidoc/INSTALL
+- asciidoc/install-sh
+- asciidoc/INSTALL.txt
+- asciidoc/javascripts/asciidoc.js
+- asciidoc/javascripts/ASCIIMathML.js
+- asciidoc/javascripts/LaTeXMathML.js
+- asciidoc/javascripts/slidy.js
+- asciidoc/javascripts/toc.js
+- asciidoc/lang-de.conf
+- asciidoc/lang-en.conf
+- asciidoc/lang-es.conf
+- asciidoc/lang-fr.conf
+- asciidoc/lang-hu.conf
+- asciidoc/lang-it.conf
+- asciidoc/lang-nl.conf
+- asciidoc/lang-pt-BR.conf
+- asciidoc/lang-ru.conf
+- asciidoc/lang-uk.conf
+- asciidoc/latex.conf
+- asciidoc/main.aap
+- asciidoc/Makefile.in
+- asciidoc/MANIFEST
+- asciidoc/README
+- asciidoc/README.txt
+- asciidoc/slidy.conf
+- asciidoc/stylesheets/asciidoc.css
+- asciidoc/stylesheets/docbook-xsl.css
+- asciidoc/stylesheets/pygments.css
+- asciidoc/stylesheets/slidy.css
+- asciidoc/stylesheets/toc2.css
+- asciidoc/stylesheets/xhtml11-quirks.css
+- asciidoc/tests/asciidocapi.py
+- asciidoc/tests/data/deprecated-quotes.txt
+- asciidoc/tests/data/filters-test.txt
+- asciidoc/tests/data/lang-de-man-test.txt
+- asciidoc/tests/data/lang-de-test.txt
+- asciidoc/tests/data/lang-en-man-test.txt
+- asciidoc/tests/data/lang-en-test.txt
+- asciidoc/tests/data/lang-es-man-test.txt
+- asciidoc/tests/data/lang-es-test.txt
+- asciidoc/tests/data/lang-fr-man-test.txt
+- asciidoc/tests/data/lang-fr-test.txt
+- asciidoc/tests/data/lang-hu-man-test.txt
+- asciidoc/tests/data/lang-hu-test.txt
+- asciidoc/tests/data/lang-it-man-test.txt
+- asciidoc/tests/data/lang-it-test.txt
+- asciidoc/tests/data/lang-nl-man-test.txt
+- asciidoc/tests/data/lang-nl-test.txt
+- asciidoc/tests/data/lang-pt-BR-man-test.txt
+- asciidoc/tests/data/lang-pt-BR-test.txt
+- asciidoc/tests/data/lang-ru-man-test.txt
+- asciidoc/tests/data/lang-ru-test.txt
+- asciidoc/tests/data/lang-uk-man-test.txt
+- asciidoc/tests/data/lang-uk-test.txt
+- asciidoc/tests/data/oldtables.txt
+- asciidoc/tests/data/rcs-id-marker-test.txt
+- asciidoc/tests/data/testcases.conf
+- asciidoc/tests/data/testcases.txt
+- asciidoc/tests/data/utf8-bom-test.txt
+- asciidoc/tests/data/utf8-examples.txt
+- asciidoc/tests/testasciidoc.conf
+- asciidoc/tests/testasciidoc.py
+- asciidoc/text.conf
+- asciidoc/themes/flask/flask.css
+- asciidoc/themes/volnitsky/volnitsky.css
+- asciidoc/vim/ftdetect/asciidoc_filetype.vim
+- asciidoc/vim/syntax/asciidoc.vim
+- asciidoc/wordpress.conf
+- asciidoc/xhtml11-quirks.conf
+- asciidoc/xhtml11.conf
+- source-highlight/ada.lang
+- source-highlight/bib.lang
+- source-highlight/bison.lang
+- source-highlight/c.lang
+- source-highlight/c_comment.lang
+- source-highlight/c_string.lang
+- source-highlight/caml.lang
+- source-highlight/changelog.lang
+- source-highlight/clike_vardeclaration.lang
+- source-highlight/cpp.lang
+- source-highlight/csharp.lang
+- source-highlight/css.lang
+- source-highlight/css_common.outlang
+- source-highlight/darwin/source-highlight
+- source-highlight/default.css
+- source-highlight/default.lang
+- source-highlight/default.style
+- source-highlight/desktop.lang
+- source-highlight/diff.lang
+- source-highlight/docbook.outlang
+- source-highlight/esc.outlang
+- source-highlight/esc.style
+- source-highlight/extreme_comment.lang
+- source-highlight/extreme_comment2.lang
+- source-highlight/extreme_comment3.lang
+- source-highlight/fixed-fortran.lang
+- source-highlight/flex.lang
+- source-highlight/fortran.lang
+- source-highlight/function.lang
+- source-highlight/glsl.lang
+- source-highlight/haxe.lang
+- source-highlight/html.lang
+- source-highlight/html.outlang
+- source-highlight/html_common.outlang
+- source-highlight/html_notfixed.outlang
+- source-highlight/html_ref.outlang
+- source-highlight/htmlcss.outlang
+- source-highlight/htmltable.outlang
+- source-highlight/htmltablelinenum.outlang
+- source-highlight/java.lang
+- source-highlight/javadoc.outlang
+- source-highlight/javascript.lang
+- source-highlight/key_string.lang
+- source-highlight/lang.map
+- source-highlight/langdef.lang
+- source-highlight/latex.lang
+- source-highlight/latex.outlang
+- source-highlight/latexcolor.outlang
+- source-highlight/ldap.lang
+- source-highlight/log.lang
+- source-highlight/logtalk.lang
+- source-highlight/lsm.lang
+- source-highlight/lua.lang
+- source-highlight/m4.lang
+- source-highlight/makefile.lang
+- source-highlight/nohilite.lang
+- source-highlight/number.lang
+- source-highlight/outlang.lang
+- source-highlight/outlang.map
+- source-highlight/pascal.lang
+- source-highlight/perl.lang
+- source-highlight/php.lang
+- source-highlight/postscript.lang
+- source-highlight/prolog.lang
+- source-highlight/properties.lang
+- source-highlight/python.lang
+- source-highlight/ruby.lang
+- source-highlight/scala.lang
+- source-highlight/script_comment.lang
+- source-highlight/sh.lang
+- source-highlight/slang.lang
+- source-highlight/sml.lang
+- source-highlight/source-highlight
+- source-highlight/spec.lang
+- source-highlight/sql.lang
+- source-highlight/style.defaults
+- source-highlight/style.lang
+- source-highlight/style2.style
+- source-highlight/style3.style
+- source-highlight/symbols.lang
+- source-highlight/tcl.lang
+- source-highlight/texinfo.outlang
+- source-highlight/texinfo.style
+- source-highlight/url.lang
+- source-highlight/xhtml.outlang
+- source-highlight/xhtml_common.outlang
+- source-highlight/xhtml_notfixed.outlang
+- source-highlight/xhtmlcss.outlang
+- source-highlight/xhtmltable.outlang
+- source-highlight/xml.lang
+- source-highlight/xorg.lang
+homepage: https://github.com/FooBarWidget/mizuho
+licenses:
+- MIT
+post_install_message: 
+rdoc_options: []
+require_paths:
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement
+  none: false
+  requirements:
+  - - ! '>='
+    - !ruby/object:Gem::Version
+      version: '0'
+required_rubygems_version: !ruby/object:Gem::Requirement
+  none: false
+  requirements:
+  - - ! '>='
+    - !ruby/object:Gem::Version
+      version: '0'
+requirements: []
+rubyforge_project: 
+rubygems_version: 1.8.25
+signing_key: 
+specification_version: 3
+summary: Mizuho documentation formatting tool
+test_files: []

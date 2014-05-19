@@ -1,0 +1,98 @@
+#!/usr/bin/env ruby
+# Copyright (c) 2008-2013 Hongli Lai
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+$LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__) + "/../lib"))
+require 'optparse'
+begin
+	require 'rubygems'
+rescue LoadError
+end
+require 'mizuho'
+require 'mizuho/generator'
+
+$KCODE = 'UTF-8' if RUBY_VERSION < '1.9'
+
+options = { :topbar => true, :attributes => [] }
+parser = OptionParser.new do |opts|
+	nl = "\n" + ' ' * 37
+	opts.banner = "Usage: mizuho [options] INPUT"
+	opts.separator ""
+	
+	opts.separator "Options:"
+	opts.on("-c", "--comments SYSTEM",
+	        "Use a commenting system. The only#{nl}" +
+	        "supported commenting system right now is#{nl}" +
+	        "'juvia'.") do |value|
+		if value != 'juvia'
+			abort "The only supported commenting system right now is 'juvia'."
+		end
+		options[:commenting_system] = value
+	end
+	opts.on("--juvia-url URL", "When using Juvia as the commenting system,#{nl}" +
+	        "specify the Juvia base URL here.") do |value|
+		options[:juvia_url] = value
+	end
+	opts.on("--juvia-site-key KEY", "When using Juvia as the commenting system,#{nl}" +
+	        "specify the Juvia site key here.") do |value|
+		options[:juvia_site_key] = value
+	end
+	#opts.on("-m", "--multi-page", "Generate one file per chapter.") do |value|
+	#	options[:multi_page] = value
+	#end
+	opts.on("--icons-dir DIR", "Specify the directory in which icons#{nl}" <<
+		"should be searched. Defaults to#{nl}" <<
+		"'images/icons'.") do |value|
+		options[:icons_dir] = value
+	end
+	opts.on("-a", "--attribute=ATTRIBUTE", "Define or delete document attribute. Uses#{nl}" <<
+		"same syntax as asciidoc's '-a' option.") do |value|
+		options[:attributes] << value
+	end
+	opts.on("-o", "--output FILE", String, "Specify the output filename.") do |value|
+		options[:output] = value
+	end
+	opts.on("--index", "Generate a full-text index.") do
+		options[:index] = true
+	end
+	opts.on("--no-run", "Do not run Asciidoc. Developer option#{nl}" <<
+		"only, don't use.") do
+		options[:no_run] = true
+	end
+end
+begin
+	parser.parse!
+rescue OptionParser::ParseError => e
+	STDERR.puts e
+	STDERR.puts
+	STDERR.puts "Please see '--help' for valid options."
+	exit 1
+end
+
+begin
+	if ARGV.empty?
+		puts parser
+		exit 1
+	else
+		Mizuho::Generator.new(ARGV[0], options).start
+	end
+rescue Mizuho::GenerationError
+	STDERR.puts "*** ERROR"
+	exit 2
+end
