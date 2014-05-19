@@ -1,6 +1,8 @@
 ruby-mizuho (0.9.19+dfsg-1pexip1) pexip; urgency=low
 
   * Prepare Pexip packaging
+  * debian/control:
+    Relax gem2deb requirements
 
  -- John-Mark Bell <jmb@pexip.com>  Mon, 19 May 2014 19:32:11 +0000
 
