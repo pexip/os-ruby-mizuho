@@ -1,14 +1,16 @@
 Source: ruby-mizuho
 Section: ruby
 Priority: optional
-Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
-Uploaders: Felix Geyer <fgeyer@debian.org>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+XSBC-Pexip-Original-Uploaders: Felix Geyer <fgeyer@debian.org>
 Build-Depends: debhelper (>= 9), gem2deb (>= 0.4.1~)
 Standards-Version: 3.9.4
 Vcs-Git: git://anonscm.debian.org/pkg-ruby-extras/ruby-mizuho.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-ruby-extras/ruby-mizuho.git;a=summary
 Homepage: https://github.com/FooBarWidget/mizuho
 XS-Ruby-Versions: all
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
 
 Package: ruby-mizuho
 Architecture: all
